@@ -40,12 +40,9 @@ function toots(options = {}){
 
 		let top  = (parentH / 2) - (childH / 2) - border + "px"
 		let left = (parentW / 2) - (childW / 2) - border + "px"
-
-
+		
 		child.style.top  = top
 		child.style.left = left
-		
-		
 	}
 
 	this[`toots_${this.type}`]()
@@ -55,27 +52,13 @@ function toots(options = {}){
 	}.bind(this))
 }
 
-
 toots({
-	parent: document.getElementById('container_1'),
-	type: "loader",
-	animation: "weel"
-}).then(function(res){
-	return fetch("https://swapi.co/api/people/1/")
-}).then(function(res){
-	return res.json()
-}).then(function(res){
-	console.log(res)
-})
-
-toots({
-	parent: document.getElementById('container_2'),
+	parent: document.getElementById('container_4_1'),
 	type: "loader",
 	animation: "weel"
 })
-
 toots({
-	parent: document.getElementById('container_3'),
+	parent: document.getElementById('container_4_2'),
 	type: "loader",
 	animation: "weel"
 })

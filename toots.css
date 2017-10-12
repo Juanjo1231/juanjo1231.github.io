@@ -11,6 +11,7 @@ html, body{
 	min-width: 10em;
 	min-height: 10em;
 	margin: 1em;
+	z-index: 10000;
 }
 #container_2{
 	width: 20em;
