@@ -61,6 +61,8 @@ toots({
 	type: "loader",
 	animation: "weel"
 }).then(function(res){
+	return fetch("https://swapi.co/api/people/1/")
+}).then(function(res){
 	console.log(res)
 })
 
