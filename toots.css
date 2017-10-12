@@ -1,1 +1,54 @@
-toots.css
+html, body{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+.container{
+	display: inline-block;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	min-width: 10em;
+	min-height: 10em;
+	margin: 1em;
+}
+#container_2{
+	width: 20em;
+	height: 20em;
+}
+#container_3{
+	width: 20em;
+	height: 10em;
+}
+/* 
+	ANIMATIONS
+ */
+
+/* General Styles */
+.load-background{
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+ /* Weel */
+.load-background .weel{
+  border: 5px solid transparent;
+  border-top: 5px solid blue;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  position: absolute;
+  animation-name: weel;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes weel{
+  from{
+    transform: rotate(0)
+  }
+  to{
+    transform: rotate(360deg)
+  }
+}
