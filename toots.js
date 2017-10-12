@@ -63,6 +63,8 @@ toots({
 }).then(function(res){
 	return fetch("https://swapi.co/api/people/1/")
 }).then(function(res){
+	return res.json()
+}).then(function(res){
 	console.log(res)
 })
 
