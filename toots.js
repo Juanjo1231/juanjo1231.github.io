@@ -24,12 +24,12 @@ function toots(options = {}){
 			this.parent.style.position = "relative"
 		}
 
-		let container = document.createElement("div")
-		container.classList.add("load-background")
-		container.innerHTML = this.loaderObjects[this.animation]
-		let child = container.children[0]
+		this.container = document.createElement("div")
+		this.container.classList.add("load-background")
+		this.container.innerHTML = this.loaderObjects[this.animation]
+		let child = this.container.children[0]
 
-		this.parent.appendChild(container)
+		this.parent.appendChild(this.container)
 
 		let parentW = this.parent.clientWidth
 		let parentH = this.parent.clientHeight
@@ -45,12 +45,14 @@ function toots(options = {}){
 		child.style.top  = top
 		child.style.left = left
 		
-		return new Promise(function(resolve, reject){
-			resolve(container)
-		})
+		
 	}
 
 	this[`toots_${this.type}`]()
+	
+	return new Promise(function(resolve, reject){
+			resolve(this.container)
+	}.bind(this))
 }
 
 
