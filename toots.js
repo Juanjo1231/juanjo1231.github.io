@@ -62,3 +62,7 @@ toots({
 	type: "loader",
 	animation: "weel"
 })
+toots({
+	type: "loader",
+	animation: "weel"
+})
