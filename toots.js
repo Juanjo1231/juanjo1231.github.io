@@ -18,7 +18,12 @@ function toots(options = {}){
 	}
 
 	this.toots_loader = function toots_loader(){
-		this.parent.style.position = "relative"
+		
+		let parentPos = getComputedStyle(this.parent).position
+		if(parentPos == "static" || parentPos == "unset"){
+			this.parent.style.position = "relative"
+		}
+
 		let container = document.createElement("div")
 		container.classList.add("load-background")
 		container.innerHTML = this.loaderObjects[this.animation]
@@ -36,10 +41,13 @@ function toots(options = {}){
 		let top  = (parentH / 2) - (childH / 2) - border + "px"
 		let left = (parentW / 2) - (childW / 2) - border + "px"
 
-		console.log(top, left)
 
 		child.style.top  = top
 		child.style.left = left
+		
+		return new Promise(function(resolve, reject){
+			resolve(container)
+		})
 	}
 
 	this[`toots_${this.type}`]()
@@ -50,6 +58,8 @@ toots({
 	parent: document.getElementById('container_1'),
 	type: "loader",
 	animation: "weel"
+}).then(function(res){
+	console.log(res)
 })
 
 toots({
